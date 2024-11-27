@@ -24,22 +24,31 @@ def read_files(files):
             df = pd.concat([df,tmp], ignore_index=True)
     return df
 
+def read_file2(file):
+    st.write(file)
+    df = read_file(file)
+    return df
+
+
 def update_files():
     if st.button("上传数据"):
         st.session_state.logged_in = False
         st.rerun()
 
 def input_files():
-    param_file_power = st.write("上传-用电量文件/完整路径",)
-    param_file_load = st.write("上传-用负荷文件/完整路径" )
+    param_file_power = st.text_input("上传-用电量文件/完整路径",)
+    param_file_load = st.text_input("上传-用负荷文件/完整路径" )
+
     # param_file_power = st.file_uploader("上传-用电量文件/kwh", accept_multiple_files=True )
     # param_file_load = st.file_uploader("上传-用负荷文件/kwh", accept_multiple_files=True )
 
     if st.button("完成上传"):
 
         if param_file_power and param_file_load:
-            df_power = read_files(param_file_power)
-            df_load = read_files(param_file_load)
+            df_power = read_file2(param_file_power)
+            df_load = read_file2(param_file_load)
+            # df_power = read_files(param_file_power)
+            # df_load = read_files(param_file_load)
 
             st.session_state.df_power = df_power
             st.session_state.df_load = df_load
