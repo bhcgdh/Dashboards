@@ -3,3 +3,4 @@ xlrd==2.0.1
 pvlib==0.11.0
 photovoltaic==0.1.9
 pytz==2024.2
+matplotlib
