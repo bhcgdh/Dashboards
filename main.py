@@ -30,9 +30,10 @@ def update_files():
         st.rerun()
 
 def input_files():
-
-    param_file_power = st.file_uploader("上传-用电量文件/kwh", accept_multiple_files=True )
-    param_file_load = st.file_uploader("上传-用负荷文件/kwh", accept_multiple_files=True )
+    param_file_power = st.write("上传-用电量文件/完整路径",)
+    param_file_load = st.write("上传-用负荷文件/完整路径" )
+    # param_file_power = st.file_uploader("上传-用电量文件/kwh", accept_multiple_files=True )
+    # param_file_load = st.file_uploader("上传-用负荷文件/kwh", accept_multiple_files=True )
 
     if st.button("完成上传"):
 
