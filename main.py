@@ -16,7 +16,6 @@ if "logged_in" not in st.session_state:
 def read_files(files):
     df = pd.DataFrame()
     for file in files:
-        st.write(file.name)
         tmp = read_file(file.name)
         try:
             df = df.append(tmp, ignore_index=True)
@@ -25,7 +24,6 @@ def read_files(files):
     return df
 
 def read_file2(file):
-    st.write(file)
     df = read_file(file)
     return df
 
@@ -72,10 +70,10 @@ login_page = st.Page(input_files,  title="Input Files")     #, icon=":material/l
 logout_page = st.Page(update_files, title="Update Files")    # icon=":material/logout:") # 更新数据
 
 # 分页,每页展示对应的功率结果值
-front = st.Page("src/page1_overview.py", title="OverView",  icon=":material/dashboard:", default=True) # 首页
-page2 = st.Page("src/page2_power.py", title="PowerShow",  icon=":material/settings:",)
-page3 = st.Page("src/page3_load.py", title="LoadShow",  icon=":material/settings:",)
-page4 = st.Page("src/page4_pv.py", title="PvShow",  icon=":material/settings:",)
+front = st.Page("Dashboards/src/page1_overview.py", title="OverView",  icon=":material/dashboard:", default=True) # 首页
+page2 = st.Page("Dashboards/src/page2_power.py", title="PowerShow",  icon=":material/settings:",)
+page3 = st.Page("Dashboards/src/page3_load.py", title="LoadShow",  icon=":material/settings:",)
+page4 = st.Page("Dashboards/src/page4_pv.py", title="PvShow",  icon=":material/settings:",)
 
 
 if st.session_state.logged_in:
