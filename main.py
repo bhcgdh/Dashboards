@@ -4,7 +4,7 @@ import warnings
 warnings.filterwarnings('ignore')
 import numpy as np
 import streamlit as st
-
+param_file_power = st.text_input("上传-用电量文件/完整路径")
 try:
     from .deal_input.deal_files import read_file
 except:
